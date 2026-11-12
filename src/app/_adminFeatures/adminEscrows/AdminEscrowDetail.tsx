@@ -34,24 +34,24 @@ export default function AdminEscrowDetail() {
 
   return (
     <>
-      <div className="flex flex-col justify-center">
+      <div className='flex flex-col justify-center'>
         <AdminDashboardPageTitle title={`Esrow #${id}`}>
-          <div className="sm:flex sm:justify-end gap-4 w-2xs hidden">
-            <span className="bg-dashboard-secondary text-dashboard-primary text-sm px-4 rounded justify-center items-center font-bold capitalize flex">
+          <div className='sm:flex sm:justify-end gap-4 w-2xs hidden'>
+            <span className='bg-db-secondary text-db-surface text-sm px-4 rounded justify-center items-center font-bold capitalize flex'>
               {escrow.status}
             </span>
             <button
-              type="button"
+              type='button'
               onClick={() => back()}
-              className="bg-transparent text-dashboard-secondary text-lg cursor-pointer"
+              className='bg-transparent text-db-secondary text-lg cursor-pointer'
             >
               &larr; <span>Back</span>
             </button>
           </div>
         </AdminDashboardPageTitle>
 
-        <div className="flex mt-8 gap-8">
-          <div className="w-full flex gap-4 flex-col">
+        <div className='flex mt-8 gap-8'>
+          <div className='w-full flex gap-4 flex-col'>
             <AdminEscrowStatusTable
               status={escrow.status}
               paymentStatus={escrow.paymentStatus}
@@ -78,19 +78,19 @@ export default function AdminEscrowDetail() {
             />
           </div>
 
-          <div className="hidden sm:w-full sm:min-w-md sm:max-w-lg sm:block">
+          <div className='hidden sm:w-full sm:min-w-md sm:max-w-lg sm:block'>
             {escrow.chatActive && <span>Chat active</span>}
           </div>
         </div>
       </div>
-      <div className="sm:hidden gap-4 w-full flex justify-between py-4">
-        <span className="bg-transparent text-dashboard-secondary text-lg cursor-pointer">
+      <div className='sm:hidden gap-4 w-full flex justify-between py-4'>
+        <span className='bg-transparent text-db-secondary text-lg cursor-pointer'>
           Status: {escrow.status}
         </span>
         <button
-          type="button"
+          type='button'
           onClick={() => back()}
-          className="bg-dashboard-secondary text-dashboard-primary text-sm px-4 rounded justify-center items-center font-bold capitalize flex py-2"
+          className='bg-db-secondary text-db-surface text-sm px-4 rounded justify-center items-center font-bold capitalize flex py-2'
         >
           &larr; Back
         </button>

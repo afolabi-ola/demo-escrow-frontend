@@ -33,7 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <div
-        className={`lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-[auto_1fr] lg:h-screen bg-white`}
+        className={`lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-[auto_1fr] lg:h-screen bg-db-background text-db-text-primary`}
       >
         <AdminDashboardHeader
           isSidebarOpen={isSidebarOpen}

@@ -24,7 +24,7 @@ export default function AdminDashboard() {
 
   if (!adminDashboardData)
     return (
-      <div className='w-full h-screen flex justify-center items-center text-2xl text-dashboard-secondary'>
+      <div className='w-full h-screen flex justify-center items-center text-2xl text-db-secondary'>
         No data was found!
       </div>
     );
