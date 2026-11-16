@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@headlessui/react": "^2.2.1",
@@ -18,7 +18,7 @@
     "jose": "^6.0.11",
     "js-cookie": "^3.0.5",
     "motion": "^12.7.2",
-    "next": "15.2.4",
+    "next": "16.4.6",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -41,7 +41,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "16.4.6",
     "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }
