@@ -5,7 +5,7 @@ import Link from "next/link";
 import { LuUserRound } from "react-icons/lu";
 import { TbSettingsCog } from "react-icons/tb";
 import { useUserProfileForm } from "../_hooks/useUserProfileForm";
-import { useState, useEffect } from "react";
+import { useDbTheme } from "../_hooks/useTheme";
 
 interface UserAvatarProps {
   dropdown: boolean;
@@ -14,20 +14,7 @@ interface UserAvatarProps {
 
 export default function UserAvatar({ dropdown, setDropdown }: UserAvatarProps) {
   const { user } = useUserProfileForm();
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) setDarkMode(saved === "dark");
-    else setDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
-  }, []);
-
-  const toggleDarkMode = () => {
-    const nextMode = !darkMode;
-    setDarkMode(nextMode);
-    document.documentElement.classList.toggle("dark", nextMode);
-    localStorage.setItem("theme", nextMode ? "dark" : "light");
-  };
+  const { isDarkMode, toggleTheme } = useDbTheme();
 
   return (
     <div className="relative">
@@ -65,7 +52,7 @@ export default function UserAvatar({ dropdown, setDropdown }: UserAvatarProps) {
             </Link>
           </li>
           <li
-            onClick={toggleDarkMode}
+            onClick={toggleTheme}
             className="flex items-center justify-between px-3 py-2 rounded hover:bg-db-background text-db-text-primary text-xs cursor-pointer transition"
             role="button"
             tabIndex={0}
@@ -73,14 +60,14 @@ export default function UserAvatar({ dropdown, setDropdown }: UserAvatarProps) {
           >
             <div
               className={`w-8 h-4 rounded-full p-0.5 flex items-center transition ${
-                darkMode
+                isDarkMode
                   ? "bg-gray-600 justify-end"
                   : "bg-gray-300 justify-start"
               }`}
             >
               <span className="w-3 h-3 bg-db-surface rounded-full shadow-sm"></span>
             </div>
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            {isDarkMode ? "Light Mode" : "Dark Mode"}
           </li>
         </ul>
       )}

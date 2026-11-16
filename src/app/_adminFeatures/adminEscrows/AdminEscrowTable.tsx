@@ -47,7 +47,7 @@ export default function AdminEscrowTable({ escrowData }: { escrowData: AdminEscr
       cell: (row) => (
         <Button
           type='button'
-          color='bg-dashboard-secondary text-white'
+          color='bg-db-secondary text-db-surface'
           onClick={() => push(`escrows/${row.row.original._id}`)}
         >
           View Details

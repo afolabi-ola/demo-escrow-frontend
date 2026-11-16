@@ -23,7 +23,7 @@ export default function AdminDashboardPageTitle({
 
   return (
     <div
-      className={`w-full flex items-center justify-between ${padding} bg-transparent text-dashboard-secondary text-xl border border-dashboard-border rounded shadow-md `}
+      className={`w-full flex items-center justify-between ${padding} bg-transparent text-db-secondary text-xl border border-db-border rounded shadow-md `}
     >
       <h1>{pageTitle}</h1>
       {children}

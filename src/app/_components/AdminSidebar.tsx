@@ -14,7 +14,7 @@ export default function AdminSidebar({
 }) {
   return (
     <aside
-      className={`lg:row-span-full border-r border-dashboard-border lg:flex lg:flex-col lg:relative lg:py-0 lg:transition-[width] bg-white lg:gap-2.5 z-60 fixed
+      className={`lg:row-span-full border-r border-db-border lg:flex lg:flex-col lg:relative lg:py-0 lg:transition-[width] bg-db-surface lg:gap-2.5 z-60 fixed
     top-header-height left-0 lg:top-0
     w-4/5 max-w-[18rem]
     h-[calc(100vh-theme(spacing.header))] lg:h-auto
@@ -28,7 +28,7 @@ export default function AdminSidebar({
     flex flex-col
   `}
     >
-      <div className='w-full hidden relative lg:flex items-center justify-center py-4 border-b border-dashboard-border h-header-height min-h-header-height max-h-header-height'>
+      <div className='w-full hidden relative lg:flex items-center justify-center py-4 border-b border-db-border h-header-height min-h-header-height max-h-header-height'>
         <Image
           src={'/logo_dark.png'}
           alt='logo'

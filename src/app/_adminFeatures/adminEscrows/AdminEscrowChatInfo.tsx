@@ -14,29 +14,28 @@ export default function EscrowChatInfo({
 }) {
   return (
     <div className='rounded-lg overflow-hidden flex flex-col gap-4'>
-      <div className='flex w-full bg-dashboard-border justify-between p-3'>
+      <div className='flex w-full bg-db-border justify-between p-3'>
         <span className='flex items-center text-center gap-2 font-bold'>
-          <HiOutlineChat className='text-dashboard-secondary' />{' '}
-          <span>Chat</span>
+          <HiOutlineChat className='text-db-secondary' /> <span>Chat</span>
         </span>
         <span>{chatActive ? 'Active' : 'Inactive'}</span>
       </div>
-      <div className='flex gap-3 border border-dashboard-border'>
+      <div className='flex gap-3 border border-db-border bg-db-surface'>
         <table className='w-full mt-2'>
           <tbody>
-            <tr className='border-b border-dashboard-border'>
+            <tr className='border-b border-db-border'>
               <th className='flex gap-6 items-center'>
                 <AdminEscrowDetailsAvartar />
                 <span className='text-start flex flex-col'>
                   <span>Creator Role</span>
-                  <span className='text-sm font-extralight text-dashboard-secondary'>
+                  <span className='text-sm font-extralight text-db-text-secondary'>
                     ({creatorEmail})
                   </span>
                 </span>
               </th>
               <td className='capitalize'>{creatorRole}</td>
             </tr>
-            <tr className='border-b border-dashboard-border'>
+            <tr className='border-b border-db-border'>
               <th className='flex gap-6'>
                 <AdminEscrowDetailsAvartar />
                 <span className='text-start flex justify-center items-center'>

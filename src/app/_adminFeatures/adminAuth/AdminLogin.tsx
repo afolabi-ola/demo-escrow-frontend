@@ -55,7 +55,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className='bg-[#ffffffbf] w-full md:w-md py-4 px-4 lg:w-lg h-auto rounded flex flex-col items-center lg:p-12 md:p-12 backdrop:blur-xl gap-8 border border-dashboard-secondary'>
+    <div className='bg-db-surface w-full md:w-md py-4 px-4 lg:w-lg h-auto rounded flex flex-col items-center lg:p-12 md:p-12 backdrop:blur-xl gap-8 border border-db-secondary'>
       <Logo />
       <div className='relative w-[70px] h-[70px] sm:w-[70px] sm:h-[70px] md:w-[70px] md:h-[70px] lg:w-[80px] lg:h-[80px] mx-auto lg:ml-0 lg:mr-0'>
         <Image
@@ -65,7 +65,7 @@ export default function AdminLogin() {
           className=' object-contain'
         />
       </div>
-      <header className='text-gray-700 font-bold border-b border-gray-400 pb-6 w-full flex justify-center'>
+      <header className='text-db-text-primary font-bold border-b border-db-border pb-6 w-full flex justify-center'>
         Please sign-in to your account
       </header>
 
@@ -77,7 +77,7 @@ export default function AdminLogin() {
             placeholder='Username'
             autoComplete='username'
             autoFocus
-            className={`w-full p-2 pr-12 border border-gray-300 rounded-sm bg-white outline-0 focus-within:border-0 focus-within:ring-1 focus:ring-dashboard-secondary ${
+            className={`w-full p-2 pr-12 border border-db-border rounded-sm bg-db-background text-db-text-primary outline-0 focus-within:border-0 focus-within:ring-1 focus:ring-db-secondary ${
               errors.username?.message ? 'border-red-500' : ''
             }`}
             {...register('username', {
@@ -102,13 +102,13 @@ export default function AdminLogin() {
         <TogglePassword
           title='Password'
           name='password'
-          style='p-2 outline-0 focus-within:border-0 focus-within:ring-1 focus:ring-dashboard-secondary'
+          style='p-2 outline-0 focus-within:border-0 focus-within:ring-1 focus:ring-db-secondary'
           register={register}
           error={errors.password?.message}
         />
 
         <div className='flex w-full justify-between items-center py-4 2xl:text-xl text-[16px]'>
-          <label className='font-extralight text-gray-500 flex items-center'>
+          <label className='font-extralight text-db-text-secondary flex items-center'>
             <input
               type='checkbox'
               className='w-4 h-4 mr-2 cursor-pointer '
@@ -118,7 +118,7 @@ export default function AdminLogin() {
           </label>
           <Link
             href='/forgottenpassword'
-            className='text-dashboard-secondary font-extralight'
+            className='text-db-secondary font-extralight'
           >
             Forgotten Password?
           </Link>
@@ -127,7 +127,7 @@ export default function AdminLogin() {
         <Button
           style='font-extralight w-full flex items-center justify-center mt-4'
           type='submit'
-          color='bg-dashboard-secondary text-white'
+          color='bg-db-secondary text-db-surface'
           isLoading={isLoading}
         >
           {isLoading ? <SpinnerMini /> : 'Sign In'}

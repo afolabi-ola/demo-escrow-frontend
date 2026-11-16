@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 * {
-  font-family: Roboto;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
@@ -271,4 +271,3 @@
 .animate-pulse-slow {
   animation: pulse 3s ease-in-out infinite;
 }
-

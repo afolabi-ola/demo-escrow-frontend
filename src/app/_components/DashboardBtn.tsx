@@ -42,20 +42,20 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const variants: Record<string, string> = {
-    primary: "bg-db-primary text-white hover:bg-db-primary-hover shadow-sm",
+    primary: 'bg-db-primary text-white hover:bg-db-primary-hover shadow-sm',
     secondary:
-      "bg-db-secondary text-db-surface hover:bg-db-secondary-hover shadow-sm",
+      'bg-db-secondary text-db-surface hover:bg-db-secondary-hover shadow-sm',
     outline:
-      "border border-db-border text-db-text-primary hover:bg-db-border/50",
-    ghost: "text-db-text hover:bg-db-border/50",
-    danger: "bg-db-error text-white hover:bg-db-error/80",
-    success: "bg-green-600 text-white hover:bg-green-700 shadow-sm",
-    info: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm",
-    link: "text-secondary underline-offset-4 hover:underline bg-transparent",
+      'border border-db-border text-db-text-primary hover:bg-db-border/50',
+    ghost: 'text-db-text-primary hover:bg-db-border/50',
+    danger: 'bg-db-error text-white hover:bg-db-error/80',
+    success: 'bg-green-600 text-white hover:bg-green-700 shadow-sm',
+    info: 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm',
+    link: 'text-secondary underline-offset-4 hover:underline bg-transparent',
     auth: `
       w-full flex justify-center items-center
       bg-db-accent text-white
-      hover:bg-db-accent-hover hover:text-db-text
+      hover:bg-db-accent-hover hover:text-db-text-primary
       transition-all duration-200
       h-[52px] rounded-lg m-0
     `,

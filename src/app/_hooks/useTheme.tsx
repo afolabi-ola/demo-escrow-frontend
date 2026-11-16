@@ -9,25 +9,43 @@ type Theme = typeof lightDbTheme;
 // ✅ Define the shape of your context
 interface DbThemeContextType {
   theme: Theme;
+  isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
 const DbThemeContext = createContext<DbThemeContextType | undefined>(undefined);
 
 export function DbThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(darkDbTheme);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [hasLoadedTheme, setHasLoadedTheme] = useState(false);
+  const theme = isDarkMode ? darkDbTheme : lightDbTheme;
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const shouldUseDarkMode =
+      savedTheme === "dark" ||
+      (savedTheme !== "light" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    setIsDarkMode(shouldUseDarkMode);
+    setHasLoadedTheme(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedTheme) return;
+
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
     Object.entries(theme).forEach(([key, value]) => {
       document.documentElement.style.setProperty(`--${key}`, value);
     });
-  }, [theme]);
+  }, [hasLoadedTheme, isDarkMode, theme]);
 
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === lightDbTheme ? darkDbTheme : lightDbTheme));
+  const toggleTheme = () => setIsDarkMode((prev) => !prev);
 
   return (
-    <DbThemeContext.Provider value={{ theme, toggleTheme }}>
+    <DbThemeContext.Provider value={{ theme, isDarkMode, toggleTheme }}>
       {children}
     </DbThemeContext.Provider>
   );

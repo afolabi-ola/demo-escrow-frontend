@@ -208,7 +208,7 @@ const Page = () => {
       <div className='w-[100%] py-[12px] bg-blue-300 px-[8px] mt-[5px] rounded-sm'>
         Site Settings
       </div>
-      <div className='grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-white py-[12px] px-[12px] my-[20px] rounded-md shadow-md'>
+      <div className='grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-db-surface py-[12px] px-[12px] my-[20px] rounded-md shadow-md'>
         <Input
           label='Site name'
           value={formData.siteName}
@@ -331,7 +331,7 @@ const Page = () => {
         <Button
           type='submit'
           style='px-[12px] py-[8px] w-[80px] rounded-sm  text-center flex justify-center'
-          color='bg-dashboard-secondary text-white'
+          color='bg-db-secondary text-db-surface'
           // className={`bg-dashboard-secondary px-[12px] py-[8px] w-[80px] rounded-sm text-white text-center flex justify-center cursor-pointer`}
           isLoading={isPending}
         >
@@ -366,7 +366,7 @@ const Input = ({
       value={value}
       onChange={onChange}
       id={label}
-      className='shadow h-[60px] appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      className='shadow h-[60px] appearance-none border border-db-border rounded w-full py-2 px-3 bg-db-background text-db-text-primary leading-tight focus:outline-none focus:shadow-outline'
     />
     {error && <p className='text-error text-sm mt-1'>{error}</p>}
   </div>

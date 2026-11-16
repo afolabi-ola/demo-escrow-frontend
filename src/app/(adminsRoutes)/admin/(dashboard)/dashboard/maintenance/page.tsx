@@ -70,7 +70,7 @@ const Page = () => {
           setChecked={updateCheck}
           checked={checked}
           focusRef={focusRef.current}
-          bg='bg-dashboard-secondary'
+          bg='bg-db-secondary'
         />
         <div className='description-cont flex py-8'>
           <div className='w-[150px]'>Details:</div>
@@ -81,13 +81,13 @@ const Page = () => {
             onChange={handleInputChange}
             placeholder='Details'
             value={value}
-            className='px-[10px] py-[8px] text-dashboard-secondary'
+            className='px-[10px] py-[8px] text-db-secondary'
             ref={focusRef}
           />
         </div>
 
         <button
-          className='w-[100px] bg-dashboard-secondary text-white rounded-sm p-[4px] flex justify-center'
+          className='w-[100px] bg-db-secondary text-db-surface rounded-sm p-[4px] flex justify-center'
           onClick={handleBtnClick}
         >
           {isPending ? <SpinnerMini /> : 'Save'}

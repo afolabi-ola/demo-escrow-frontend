@@ -10,12 +10,12 @@ export default function Logout() {
     <ButtonIcon
       toolTip='Logout'
       style='lg:text-2xl'
-       tipPosition="bottom"
+      tipPosition='bottom'
       isLoading={isLoading}
       onClick={handleLogout}
     >
       {isLoading ? (
-        <SpinnerMini color='text-dashboard-secondary' />
+        <SpinnerMini color='text-db-secondary' />
       ) : (
         <HiArrowRightOnRectangle />
       )}
