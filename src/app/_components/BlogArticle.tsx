@@ -2,7 +2,6 @@ import SectionalTitle from "./SectionalTitle";
 import Button from "./Button";
 import ArticleCard from "./ArticleCard";
 import { FiArrowUpRight } from "react-icons/fi";
-import Link from "next/link";
 
 const BlogArticle = () => {
   return (
@@ -17,16 +16,15 @@ const BlogArticle = () => {
             desSize="lg:text-2xl"
             style="lg:text-start text-center"
           />
-          <Link href="/blog" passHref legacyBehavior>
-            <Button
-              color="bg-secondary text-white"
-              textSize="text-xl"
-              style="flex items-center gap-3"
-              aria-label="View all blog articles"
-            >
-              View All Blog <FiArrowUpRight />
-            </Button>
-          </Link>
+          <Button
+            href="/blog"
+            color="bg-secondary text-white"
+            textSize="text-xl"
+            style="flex items-center gap-3"
+            aria-label="View all blog articles"
+          >
+            View All Blog <FiArrowUpRight />
+          </Button>
         </header>
 
         <div className="flex flex-col gap-8 lg:flex-row justify-center lg:justify-between items-center">

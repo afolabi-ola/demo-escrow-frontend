@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Button from "./Button";
 import SectionalTitle from "./SectionalTitle";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -16,16 +15,15 @@ export default function About() {
           desSize="lg:text-2xl"
           style="lg:text-start text-center"
         />
-        <Link href="/blog" passHref legacyBehavior>
-          <Button
-            color="bg-secondary text-white"
-            textSize="text-xl"
-            style="flex items-center gap-3"
-            aria-label="Learn more about us"
-          >
-            Learn More <FiArrowUpRight />
-          </Button>
-        </Link>
+        <Button
+          href="/blog"
+          color="bg-secondary text-white"
+          textSize="text-xl"
+          style="flex items-center gap-3"
+          aria-label="Learn more about us"
+        >
+          Learn More <FiArrowUpRight />
+        </Button>
       </div>
       <AboutusCards />
     </section>
