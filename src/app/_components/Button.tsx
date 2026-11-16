@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 interface ButtonProps {
   children: React.ReactNode;
+  href?: string;
   color?: string;
   textSize?: string;
   padding?: string;
@@ -18,10 +21,29 @@ const Button = ({
   onClick,
   type = "button",
   isLoading = false,
+  href,
 }: ButtonProps) => {
   const baseStyle = `${padding} ${textSize} rounded-md transition duration-300 ${style}`;
   const isDisabledStyle = `blur[3px] ${color} text-white cursor-not-allowed ${padding} ${textSize} rounded-md transition duration-300 ${style}`;
   const activeStyle = `${color} cursor-pointer hover:opacity-80`;
+
+  const content = (
+    <>
+      {children}
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        aria-disabled={isLoading}
+        className={`${baseStyle} ${isLoading ? isDisabledStyle : activeStyle}`}
+      >
+        {content}
+      </Link>
+    );
+  }
 
   return (
     <button
@@ -30,7 +52,7 @@ const Button = ({
       disabled={isLoading}
       className={`${baseStyle} ${isLoading ? isDisabledStyle : activeStyle}`}
     >
-      {children}
+      {content}
     </button>
   );
 };
